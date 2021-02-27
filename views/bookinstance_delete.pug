@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 #{title}: #{bookinstance._id}
+  p Status: 
+    span.text-success #{bookinstance.status}
+
+  p Do you really want to delete this Copy?
+
+
+  form(action="", method="post") 
+    div.form-group
+      input#authorid.form-control(type='hidden',name='authorid', required='true', value=bookinstance._id )
+      button.btn.btn-primary(type='submit') Delete
